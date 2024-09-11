@@ -1,4 +1,5 @@
 import './App.css'
+import { CharacterFilter } from './components/CharacterFilter'
 import { CharacterList } from './components/CharacterList'
 
 function App() {
@@ -6,7 +7,8 @@ function App() {
 
   return (
     <>
-     <CharacterList/>
+    {/* <CharacterList/> */}
+     <CharacterFilter/>
     </>
   )
 }
