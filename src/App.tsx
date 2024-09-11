@@ -7,8 +7,8 @@ function App() {
 
   return (
     <>
-    {/* <CharacterList/> */}
-     <CharacterFilter/>
+    <CharacterList/>
+     {/* <CharacterFilter/> */}
     </>
   )
 }
