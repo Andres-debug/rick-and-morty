@@ -1,25 +1,25 @@
 import { useState } from 'react'
 import './App.css'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import { CharacterFilter } from './components/CharacterFilter'
 import { CharacterList } from './components/CharacterList'
 import { CharacterEpisodes } from './components/CharacterEpisodes';
+import { CharacterListHook } from './components/CharacterListHook';
+import { CharacterDetail } from './components/CharacterDetail'
 
 function App() {
   
-  const [characterId,setCharacterId]=useState<number>(1);
-
   return (
     <>
     <div>
-      <header>
-        <h1>Rick and Morty</h1>
-        <div>
-          <label>Selecciona un ID de personaje (1-671)</label>
-          <input type='number' min='1' max='671' value={characterId}
-          onChange={(e)=>setCharacterId(Number(e.target.value))}/>
-        </div>
-        <CharacterEpisodes characterId={characterId}/>
-      </header>
+      <Router>
+        <Routes>
+          <Route path="/" element={<CharacterListHook/>}/>
+          <Route path="/character/:id" element={<CharacterDetail/>}/>
+        </Routes>
+      </Router>
+
+      
 
     </div>
     
